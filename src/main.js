@@ -1,16 +1,12 @@
-/*
-  Створи список справ.
-  На сторінці є два інпути які має вводиться назва і текст задачі.
-  Після натискання на кнопку "Add" завдання додається до списку #task-list.
+import { onSubmit } from './js/handlers';
 
-  У кожної картки має бути кнопка "Delete", щоб можна було
-  прибрати завдання зі списку.
-  Список із завданнями має бути доступним після перезавантаження сторінки.
+const submitBtn = document.querySelector('.header-form-btn');
+const headerForm = document.querySelector('.header-form');
+const taskNameInput = document.querySelector(
+  '.header-form-input[name="taskName"]'
+);
+const taskDescriptionInput = document.querySelector(
+  '.header-form-input[name="taskDescription"]'
+);
 
-  Розмітка картки задачі
-  <li class="task-list-item">
-      <button class="task-list-item-btn">Delete</button>
-      <h3>Заголовок</h3>
-      <p>Текст</p>
-  </li>
-*/
+headerForm.addEventListener('submit', onSubmit);
