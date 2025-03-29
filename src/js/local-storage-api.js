@@ -2,10 +2,16 @@ export function saveToLocalStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
-export function getTasksFromLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
+export function loadFromLocalStorage(key) {
+  const saved = localStorage.getItem(key);
+  try {
+    return JSON.parse(saved);
+  } catch (error) {
+    console.log(error);
+    return saved;
+  }
 }
 
-export function removeTasksFromLocalStorage(key) {
+export function removeFromLocalStorage(key) {
   localStorage.removeItem(key);
 }
