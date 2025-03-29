@@ -1,12 +1,4 @@
 import { onSubmit } from './js/handlers';
+import { refs } from './js/refs';
 
-const submitBtn = document.querySelector('.header-form-btn');
-const headerForm = document.querySelector('.header-form');
-const taskNameInput = document.querySelector(
-  '.header-form-input[name="taskName"]'
-);
-const taskDescriptionInput = document.querySelector(
-  '.header-form-input[name="taskDescription"]'
-);
-
-headerForm.addEventListener('submit', onSubmit);
+refs.headerForm.addEventListener('submit', onSubmit);
