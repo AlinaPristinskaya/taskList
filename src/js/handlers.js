@@ -1,6 +1,7 @@
 import { STORAGE_KEYS } from './constants';
 import { tasks } from './data';
 import { saveToLocalStorage } from './local-storage-api';
+import { renderTasksList } from './render-tasks';
 
 export function onSubmit(event) {
   event.preventDefault();
@@ -24,6 +25,10 @@ export function onSubmit(event) {
   tasks.push(task);
 
   saveToLocalStorage(STORAGE_KEYS.TASKS, tasks);
-
+  renderTasksList(tasks);
   event.target.reset();
+}
+
+export function onDOMContentLoaded() {
+  renderTasksList(tasks);
 }
